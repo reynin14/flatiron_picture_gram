@@ -26,3 +26,15 @@ Picture.create(
   title: "Saw a dolphin!",
   user_id: User.first.id
 )
+
+Comment.create(
+  content: "haha that's so funny!",
+  picture_id: 1,
+  user_id: 1
+)
+
+Comment.create(
+  content: "WOW IT WORKED?!",
+  picture_id: 1,
+  user_id: 1
+)
