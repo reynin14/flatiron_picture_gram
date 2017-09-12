@@ -1,6 +1,6 @@
-<h1>Log in<h1>
+<h1>Welcome to Flatiron-Gram!<h1>
   <h3><%= form_tag('/sessions/new', method: :post) do %></h3><br>
   <h3>Username: <%= text_field_tag :username %></h3><br>
   <h3>Password: <%= text_field_tag :password %></h3><br>
-  <h3><%= submit_tag 'Log In' %></h3>
+  <h3><div><%= submit_tag 'Log In' %></div></h3>
   <% end %>
