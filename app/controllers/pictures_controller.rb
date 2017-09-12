@@ -13,10 +13,10 @@ class PicturesController < ApplicationController
 	end
 
 	def create
-		# @user = User.find_by(username: params[:username])
 		@picture = Picture.new(picture_params)
-		if @picture.save @picture
-			redirect_to 
+		if @picture.save
+			@picture.user_id = @user.id
+			redirect_to @user
 		else
 			render :new
 		end
