@@ -1,10 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  543
   helper_method :logged_in?, :current_user
 
   def require_login
-    unless logged_in?
+    unless logged_in? || session[:user_id]
       flash[:error] = "Please log in or sign up."
       render :new
     end
