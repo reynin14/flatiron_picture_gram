@@ -1,0 +1,5 @@
+<h1>Photos with this tag</h1>
+<% @tag.pictures.each do |pic| %>
+	<h4><%= pic.title %></h4>
+	<h4><%= pic.image_irl %></h4>
+<%end%>
