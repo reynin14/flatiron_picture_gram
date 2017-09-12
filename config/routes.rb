@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post 'pictures/new', to: 'pictures#create'
   post 'sessions/new', to: 'sessions#create'
 
+  post '/logout', to: 'sessions#destroy'
+
   root to: 'sessions#new'
 
   # get '/users/new', to: 'users#new', as: '/signup'

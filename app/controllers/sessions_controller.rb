@@ -9,4 +9,9 @@ class SessionsController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def destroy
+    session.delete :username
+    redirect_to '/sessions/new'
+  end
+
 end
