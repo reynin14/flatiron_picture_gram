@@ -6,8 +6,10 @@
 	<% @post.errors.full_messages.each do |msg| %>
 	<li><%= msg %></li>
 	<% end %>
-</ul>
-<%= form_for :user do |f| %>
+</ul><br>
+<% end %>
+
+<%= form_for (@user) do |f| %>
 	<h3>Name</h3><br>
 	<%= f.text_field :username %><br>
 	<h3>Email</h3><br>

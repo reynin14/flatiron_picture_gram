@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :pictures
   resources :users
 
-  get '/users/new', to: 'users#new', as: '/signup'
+  post 'users/new', to: 'users#create'
+
+  # get '/users/new', to: 'users#new', as: '/signup'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
