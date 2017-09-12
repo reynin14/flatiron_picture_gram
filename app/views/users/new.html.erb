@@ -1,0 +1,18 @@
+<h2>Sign up</h2>
+<% if @user.errors.any? %>
+<br>
+<%= pluralize(@post.errors.count, 'error')%><br>
+<ul>
+	<% @post.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+</ul>
+<%= form_for :user do |f| %>
+	<h3>Name</h3><br>
+	<%= f.text_field :username %><br>
+	<h3>Email</h3><br>
+	<%= f.text_field :email %><br>
+	<h3>Password</h3><br>
+	<%= f.text_field :password %><br>
+	<%= f.submit %>
+<%end%>
