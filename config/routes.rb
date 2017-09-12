@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   post 'pictures/new', to: 'pictures#create'
   post 'sessions/new', to: 'sessions#create'
 
-  post '/logout', to: 'sessions#destroy'
+  post '/users/sessions', to: 'sessions#destroy', as: '/logout'
+
+  get '/users/pictures/new', to: 'pictures#new'
 
   root to: 'sessions#new'
 

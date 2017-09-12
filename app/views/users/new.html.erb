@@ -1,9 +1,9 @@
 <h2>Sign up</h2>
 <% if @user.errors.any? %>
-<br>
-<%= pluralize(@post.errors.count, 'error')%><br>
-<ul>
-	<% @post.errors.full_messages.each do |msg| %>
+	<br>
+	<%= pluralize(@user.errors.count, 'error')%><br>
+	<ul>
+	<% @user.errors.full_messages.each do |msg| %>
 	<li><%= msg %></li>
 	<% end %>
 </ul><br>
@@ -14,5 +14,6 @@
   Email: <%= f.text_field :email %><br>
   Password: <%= f.password_field :password %><br>
   Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+	<br>
+  <%= f.submit "Create Account" %>
 <% end %>

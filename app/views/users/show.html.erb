@@ -3,10 +3,15 @@
 <br>
 <h2>Your Pictures:</h2>
 <ul>
-<% @pictures.each do |picture| %>
-<li><%= link_to picture.title, picture %></li><br>
-<%= picture.image_url %>
+<% if @user.pictures.empty? %>
+  <%="You don't have any, add some! (:" %>
+<% else %>
+  <% @user.pictures.each do |picture| %>
+  <li><%= link_to picture.title, picture %></li><br>
+  <%= picture.image_url %>
+  <% end %>
 <% end %>
 </ul>
 <h2>Bye</h2><br>
-<%= button_to 'Logout', logout_path, method: 'delete' %>
+<div><%= button_to('Upload a picture', '/pictures/new', method: :get) %></div><br>
+<%= button_to('Logout', 'sessions#destroy', method: :puts) %>
