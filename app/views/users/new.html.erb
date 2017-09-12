@@ -9,12 +9,10 @@
 </ul><br>
 <% end %>
 
-<%= form_for (@user) do |f| %>
-	<h3>Name</h3><br>
-	<%= f.text_field :username %><br>
-	<h3>Email</h3><br>
-	<%= f.text_field :email %><br>
-	<h3>Password</h3><br>
-	<%= f.text_field :password %><br>
-	<%= f.submit %>
-<%end%>
+<%= form_for :user, url: '/users' do |f| %>
+  Username: <%= f.text_field :username %><br>
+  Email: <%= f.text_field :email %><br>
+  Password: <%= f.password_field :password %><br>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+<% end %>

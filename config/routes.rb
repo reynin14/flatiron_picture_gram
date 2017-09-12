@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
 
   post 'users/new', to: 'users#create'
+  post 'pictures/new', to: 'pictures#create'
 
   root to: 'sessions#new'
 
