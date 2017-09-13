@@ -26,6 +26,13 @@ class PicturesController < ApplicationController
 		end
 	end
 
+	def destroy
+    @picture = Picture.find(params[:id])
+    @user = User.find_by(id: @picture.user_id)
+    @picture.destroy
+    redirect_to @user
+    end
+
 	private
 
 	def picture_params
