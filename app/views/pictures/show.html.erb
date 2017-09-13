@@ -1,2 +1,12 @@
 <h2><%= @picture.title %> </h2><br>
-<h4><%= @picture.image_url %></h4>
+<p>url: <%= @picture.image_url %></p>
+<br>
+<br>
+<p>Comments:</p><br>
+<ul>
+  <% @comments.each do |comment| %>
+  <li><%= comment.content %></li>
+  <% end %>
+</ul>
+<br>
+<%= button_to('Add a comment!', 'comments#new', method: :get) %>
