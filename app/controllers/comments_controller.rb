@@ -14,11 +14,12 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = session[:user_id]
-    @comment.picture_id =
-    @user = User.find_by(id: session[:user_id])
+    @comment.user_id = params[:comment][:user_id]
+    @comment.picture_id = params[:comment][:picture_id]
+    @user = User.find_by(id: params[:comment][:user_id])
+    @picture = Picture.find_by(id: params[:comment][:picture_id])
     if @comment.save
-      redirect_to @
+      redirect_to picture_path(@picture)
     else
       render :new
     end
@@ -26,8 +27,8 @@ class CommentsController < ApplicationController
 
   private
 
-  def picture_params
-    params.require(:comment).permit(:content)
+  def comment_params
+    params.require(:comment).permit(:content, :picture_id, :user_id)
   end
 
 end

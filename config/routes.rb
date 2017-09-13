@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'users/new', to: 'users#create'
   post 'pictures/new', to: 'pictures#create'
   post 'sessions/new', to: 'sessions#create'
+  post '/pictures/comments', to: 'comments#create'
 
   post '/users/sessions', to: 'sessions#destroy', as: '/logout'
 

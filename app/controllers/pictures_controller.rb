@@ -6,7 +6,9 @@ class PicturesController < ApplicationController
 
 	def show
 		@picture = Picture.find_by(id: params[:id])
-		@comments = Comment.all
+		@comments = Comment.all.select do |comment|
+			comment.picture_id == @picture.id
+		end
 	end
 
 	def new
