@@ -6,6 +6,9 @@ class PicturesController < ApplicationController
 
 	def show
 		@picture = Picture.find_by(id: params[:id])
+		@comments = Comment.all.select do |comment|
+			comment.picture_id == @picture.id
+		end
 	end
 
 	def new
@@ -14,8 +17,9 @@ class PicturesController < ApplicationController
 
 	def create
 		@picture = Picture.new(picture_params)
+		@picture.user_id = session[:user_id]
+		@user = User.find_by(id: session[:user_id])
 		if @picture.save
-			@picture.user_id = @user.id
 			redirect_to @user
 		else
 			render :new
