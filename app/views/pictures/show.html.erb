@@ -16,4 +16,5 @@
 <%= f.hidden_field :picture_id, :value => @picture.id %><br>
 <%= f.hidden_field :user_id, :value => session[:user_id] %><br>
 <%= button_to('Add a comment!', 'comments#create', method: :post) %>
+<%= button_to "Delete Picture", @picture, :method => :delete %>
 <% end %>
