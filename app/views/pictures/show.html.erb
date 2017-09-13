@@ -5,7 +5,7 @@
 <p>Comments:</p><br>
 <ul>
   <% @comments.each do |comment| %>
-  <li><%= comment.content %></li>
+  <li><%= comment.content %> - <%= link_to User.find_by(id: comment.user_id).username, user_path(User.find_by(id: comment.user_id)) %></li>
   <% end %>
 </ul>
 <br>

@@ -1,17 +1,16 @@
-<h1>Here u are</h1>
-<h2>Hi, <%= @user.username  %></h2>
+<h1><%= @user.username  %></h1>
 <br>
-<h2>Your Pictures:</h2>
+<h2>Pictures:</h2>
 <ul>
 <% if @user.pictures.empty? %>
-  <%="You don't have any, add some! (:" %>
+  <%="User doesn't have any pictures :(" %>
 <% else %>
   <% @user.pictures.each do |picture| %>
-  <li><%= link_to picture.title, picture %></li><br>
-  <%= picture.image_url %>
+  <li><%= link_to picture.title, picture %><br>
+  <img src="<%= picture.image_url %>"></li><br>
   <% end %>
 <% end %>
 </ul>
-<h2>Bye</h2><br>
+<br>
 <div><%= button_to('Upload a picture', '/pictures/new', method: :get) %></div><br>
 <%= button_to('Logout', 'sessions#destroy', method: :puts) %>
