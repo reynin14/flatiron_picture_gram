@@ -1,3 +1,4 @@
+
 <div id="top"><h1 id="header"><%= @user.username  %>'s page</h1><br>
 <% if session[:user_id] == @user.id %>
 	<div id="buttons"><%= button_to('Add a picture', '/pictures/new', method: :get, class: "clicker") %><br><br>
@@ -5,7 +6,7 @@
 		<%end%>
 <ul>
 <% if @user.pictures.empty? %>
-  <p id="no_pictures"><%="You don't have any pictures :(" %><p>
+  <p id="no_pictures"><%= "No pictures :(" %><p>
 <% else %>
   <% @user.pictures.each do |picture| %>
   <li><%= link_to (image_tag (picture.image_url)), picture_path(picture) %><br>

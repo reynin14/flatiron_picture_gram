@@ -12,10 +12,12 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find_by_id(session[:username])
+    @users = User.all
   end
 
   def logged_in?
     @current_user != nil
   end
+
 
 end

@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   end
 
   def new
-
     @user = User.new
   end
 
@@ -25,6 +24,10 @@ class UsersController < ApplicationController
   	else
   		render :new
   	end
+  end
+
+  def welcome
+    @users = User.all
   end
 
   private
