@@ -9,19 +9,21 @@ class TagsController < ApplicationController
 	end
 
 	def create
-		@tag = Tag.new(tag_params)
-		@picture = Picture.find_by(id: params[:id])
-		if @tag.save 
-			redirect_to tag_path(@tag)
+		@tag = Tag.find_or_create_by(name: params[:name])
+		if @tag.save
+			@picture_tag = PictureTag.new(picture_id: params[:picture_id], tag_id: @tag.id)
+			@picture_tag.save
+			@picture = Picture.find_by(id: params[:picture_id])
+			redirect_to @picture
 		else
-			render :new 
+			render :new
 		end
 	end
 
-	private 
-
-	def tag_params
-		params.require(:tag).permit(:name)
-	end
+	private
+	#
+	# def tag_params
+	# 	# params.require(:tag).permit(:name)
+	# end
 
 end

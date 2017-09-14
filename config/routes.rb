@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post '/pictures/comments', to: 'comments#create'
   post '/comments/comments', to: 'comments#destroy'
   post '/sessions/destroy_all', to: 'sessions#destroy_all'
+  post '/tags/create', to: 'tags#create'
 
 
 

@@ -1,6 +1,5 @@
 <h1>Photos with this tag</h1>
-<h4>#<%=@tag.name%></h4>
+<li>#<%=@tag.name%></li><br>
 <% @tag.pictures.each do |pic| %>
-	<h4><%= pic.title %></h4>
-	<h4><%= pic.image_irl %></h4>
+	<%= link_to (image_tag (pic.image_url)), picture_path(pic) %>
 <%end%>

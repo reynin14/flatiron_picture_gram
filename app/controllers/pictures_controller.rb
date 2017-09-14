@@ -6,9 +6,15 @@ class PicturesController < ApplicationController
 
 	def show
 		@picture = Picture.find_by(id: params[:id])
+
+		@pictags = PictureTag.all.select do |pictag|
+			pictag.picture_id == @picture.id
+		end
+
+		@tags = Tag.all
+
 		@comments = Comment.all.select do |comment|
 			comment.picture_id == @picture.id
-		@picture_tag = PictureTag.new()
 		end
 	end
 
