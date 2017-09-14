@@ -1,8 +1,9 @@
-p #header {
+#topper {
 	color: blue;
-	font-family: Helvetica;
-	font-size: 1.5em
 
+	padding-top: 5%;
+	font-family: Helvetica;
+	font-size: 1.3em;
 }
 
 button {
@@ -17,4 +18,16 @@ button {
 
 .buttons:hover {
 	background-color: gray;
+}
+
+p {
+	text-align: center;
+	font-family: Helvetica;
+	color: #42f4d7;
+}
+
+#container {
+	margin: auto;
+	text-align: center;
+	display: block;
 }

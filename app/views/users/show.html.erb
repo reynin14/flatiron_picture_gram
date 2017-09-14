@@ -1,6 +1,6 @@
 <div id="navbar">
 	<ul id="heads">
-		<li class="header"><%= link_to("Home", user_path)%></li>
+		<li class="header"><%= link_to("Home", user_path(session[:user_id]))%></li>
 		<li class="header"><%= link_to("New photo", 'pictures/new')%></li>
 		<li class="header"><%= link_to("Log out", 'sessions#destroy', method: :post)%></li>
 		<li class="header" id="welcome"><%=@user.username%></li>

@@ -5,10 +5,23 @@
 	width: 100%;
 }
 
+#picname {
+	padding-top: 7%;
+	padding-bottom: -5px;
+	text-align: center;
+	margin: auto;
+	display: block;
+	font-family: Helvetica;
+	color: blue;
+	font-size: 1.3em;
+}
+
 .within {
 	display: inline-block;
 	margin: auto;
 	vertical-align: text-top;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 p #smaller {
@@ -68,16 +81,6 @@ p {
 	color: blue;
 }
 
-#picname {
-	margin-top: 200px;
-	text-align: center;
-	margin: auto;
-	display: block;
-	font-family: Helvetica;
-	color: blue;
-	font-size: 1.5em;
-}
-
 p {
 	text-align: center;
 	font-family: Helvetica;
@@ -116,6 +119,10 @@ p {
 	display: block;
 }
 
+.button #delete {
+	background-color: red;
+}
+
 .button .red {
 	border: dotted red 1px;
 }
@@ -124,7 +131,6 @@ p {
 	background-color: gray;
 
 }
-
 
 #no_pictures {
 	display: block;

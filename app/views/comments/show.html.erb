@@ -8,8 +8,11 @@
 </div>
 
 
-<p id="header">Edit/Delete your comment!</p>
-<%= @comment.content %>
+<p id="topper">Edit/Delete your comment!</p><br>
+<p><%= @comment.content %><p>
 
+
+<div id="container">
 <%= button_to 'Edit', edit_comment_path, class: "buttons" %> <br>
 <%= button_to('Delete', comment_path(@comment), method: :delete, class: "buttons")%>
+ </div>
