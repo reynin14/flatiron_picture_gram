@@ -1,8 +1,18 @@
-<h2 id="header">Add a photo</h2>
+<div id="navbar">
+	<ul id="heads">
+		<li class="header"><%= link_to("Home", user_path(@user))%></li>
+		<li class="header"><%= link_to("New photo", 'pictures/new')%></li>
+		<li class="header"><%= link_to("Log out", 'sessions#destroy', method: :post)%></li>
+		<li class="header" id="welcome"><%=@user.username%></li>
+	</ul>
+</div>
+
+<div id="form>"><p id="header-new">Add a photo</p>
 <%= form_for @picture do |f| %>
-	<h4>Title</h4><br>
-	<%= f.text_field :title %>
-	<h4>Image URL</h4> <br>
-	<%= f.text_field :image_url %><br>
-	<%= f.submit %>
+	<p>Title</p>
+	<p><%= f.text_field :title %></p>
+	<p>Image URL</p>
+	<p><%= f.text_field :image_url %></p>
+	<p><%= f.submit class: "button" %></p>
 <%end%>
+</div>
