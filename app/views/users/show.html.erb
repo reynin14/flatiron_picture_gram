@@ -1,6 +1,9 @@
-<div id="top"><h1 id="header"><%= @user.username  %></h1><br>
-<div id="buttons"><%= button_to('Add a picture', '/pictures/new', method: :get, class: "clicker") %><br><br>
-<%= button_to('Logout', 'sessions#destroy', method: :puts, class: "clicker") %></div></div>
+
+<div id="top"><h1 id="header"><%= @user.username  %>'s page</h1><br>
+<% if session[:user_id] == @user.id %>
+	<div id="buttons"><%= button_to('Add a picture', '/pictures/new', method: :get, class: "clicker") %><br><br>
+	<%= button_to('Logout', 'sessions#destroy', method: :puts, class: "clicker") %></div></div> 
+		<%end%>
 <ul>
 <% if @user.pictures.empty? %>
   <p id="no_pictures"><%= "No pictures :(" %><p>
