@@ -2,46 +2,51 @@
 <div id="navbar">
 	<ul id="heads">
 		<li class="header"><%= link_to("Home", user_path)%></li>
-		<li class="header"><%= link_to("New photo", 'pictures/new')%></li>
+		<li class="header"><%= link_to("New photo", new_picture_path)%></li>
 		<li class="header"><%= link_to("Log out", 'sessions#destroy', method: :post)%></li>
 		<li class="header" id="welcome"><%=@user.username%></li>
 	</ul>
 </div>
 
 
-<h2><%= @picture.title %> </h2><br>
+<div><p id="picname"><%= @picture.title %> <p></div>
 <p><img src="<%= @picture.image_url %>"></p>
-<br>
-<br>
-<p>Tags:</p><br>
-<% @picture.tags.each do |tag| %>
-<%= link_to tag.name, tag %>
-<% end %>
-<br>
-<br>
-<p>Make a tag for this picture!</p>
-<%= form_tag ('/tags/create') do %><br>
-<label>Name: </label><br>
-<%= text_field_tag :name %><br>
-<%= hidden_field_tag 'picture_id', @picture.id %>
-<%= submit_tag "Make this tag" %>
-<% end %>
 
-<br>
-<br>
-<p>Comments:</p><br>
+
+<p><span class="blue">Tags:</span>
+<% @picture.tags.each do |tag| %>
+<%= link_to tag.name, tag, class: "green-tag"%>
+<% end %>
+<p>
+
+<p class="blue">Comments:</p>
 <ul>
   <% @comments.each do |comment| %>
-  <li><%= comment.content %> - <%= link_to User.find_by(id: comment.user_id).username, user_path(User.find_by(id: comment.user_id)) %> - <%= link_to 'Edit/Delete this comment', comment%></li>
-  <% end %>
+  <p><%= comment.content %> - <span id="purple"><%= link_to User.find_by(id: comment.user_id).username, user_path(User.find_by(id: comment.user_id)) %></span> - <span id="smaller"><%= link_to 'Edit/Delete this comment', comment%></span></p>
+  <%end%>
 </ul>
-<br>
-<br>
-<p>Want to add a comment? Make it below!</p>
-<%= form_for Comment.new do |f| %>
-<%= f.text_area :content %>
-<%= f.hidden_field :picture_id, :value => @picture.id %><br>
-<%= f.hidden_field :user_id, :value => session[:user_id] %><br>
-<%= button_to('Add a comment!', 'comments#create', method: :post) %>
-<%= button_to "Delete Picture", @picture, :method => :delete %>
+
+
+
+<div id="container">
+<div class="within" id="1">
+<%= form_tag ('/tags/create') do %>
+<p class="blue">Add a tag:</p>
+<p><%= text_field_tag :name %><p>
+<%= hidden_field_tag 'picture_id', @picture.id %>
+<%= submit_tag "Tag it", class: "button" %>
 <% end %>
+</div>
+
+<div class="within" id="2">
+<p class="blue">Add a comment:</p>
+<%= form_for Comment.new do |f| %>
+<p><%= f.text_field :content %></p>
+<%= f.hidden_field :picture_id, :value => @picture.id %>
+<%= f.hidden_field :user_id, :value => session[:user_id] %>
+<p><%= button_to('Comment it', 'comments#create', method: :post, class: "button") %></p>
+</div>
+</div>
+<p><%= button_to("Delete Picture", @picture, :method => :delete, class: "button")%></p>
+<% end %>
+

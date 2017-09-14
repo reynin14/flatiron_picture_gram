@@ -1,5 +1,15 @@
-<h1>Edit/Delete your comment!</h1>
+<div id="navbar">
+	<ul id="heads">
+		<li class="header"><%= link_to("Home", user_path(@user))%></li>
+		<li class="header"><%= link_to("New photo", 'pictures/new')%></li>
+		<li class="header"><%= link_to("Log out", '/', method: :get)%></li>
+		<li class="header" id="welcome"><%=@user.username%></li>
+	</ul>
+</div>
+
+
+<p id="header">Edit/Delete your comment!</p>
 <%= @comment.content %>
-<br>
-<br>
-<%= button_to 'Edit', edit_comment_path %> <%= button_to('Delete', comment_path(@comment), method: :delete)%>
+
+<%= button_to 'Edit', edit_comment_path, class: "buttons" %> <br>
+<%= button_to('Delete', comment_path(@comment), method: :delete, class: "buttons")%>

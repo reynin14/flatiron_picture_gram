@@ -17,8 +17,10 @@ Rails.application.routes.draw do
 
 
   post '/users/sessions', to: 'sessions#destroy', as: 'logout'
+  post '/pictures/sessions', to: 'sessions#new'
 
   get '/users/pictures/new', to: 'pictures#new'
+  get '/comments/pictures/new', to: 'pictures#new'
   get '/pictures/:id/tags/new', to: 'tags#new'
 
   get '/', to: 'sessions#new'

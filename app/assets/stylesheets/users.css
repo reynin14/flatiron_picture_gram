@@ -1,3 +1,9 @@
+#signup-head p {
+	color: blue;
+	font-family: Helvetica;
+	font-size: 1.5em
+}
+
 #signup-block {
 	margin: auto;
 	display: block;
@@ -13,13 +19,13 @@
 #signup p {
 	font-family: Helvetica;
 	font-size: 16px;
-	color: #42f4d7;
+	color: #42f4d7; 
 }
 
-#signup-head {
-	color: blue;
-	font-family: Helvetica;
-	font-size: 1.5em
+img {
+	display: block;
+	margin: auto;
+	text-align: center;
 }
 
 #pics {
@@ -32,11 +38,13 @@
 #pic ul {
 	margin: auto;
 	display: block;
+	text-align: center;
 }
 
 #pic li {
 	margin: auto;
 	display: block;
+	text-align: center;
 }
 
 img {

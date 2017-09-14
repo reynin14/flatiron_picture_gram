@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
 		@comments = Comment.all.select do |comment|
 			comment.picture_id == @picture.id
 		end
+		@user = User.find_by(id: session[:user_id])
 	end
 
 	def new

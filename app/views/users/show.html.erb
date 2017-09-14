@@ -14,7 +14,7 @@
   <p id="no_pictures"><%= "No pictures :(" %><p>
 <% else %>
   <% @user.pictures.each do |picture| %>
-  <li class="picture"><%= link_to (image_tag (picture.image_url)), picture_path(picture) %><br>
+  <li><%= link_to (image_tag (picture.image_url)), picture_path(picture) %></li><br>
   <% end %>
 <% end %>
 </ul>

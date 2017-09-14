@@ -1,3 +1,25 @@
+#container {
+	margin:auto;
+	display:block;
+	text-align: center;
+	width: 100%;
+}
+
+.within {
+	display: inline-block;
+	margin: auto;
+	vertical-align: text-top;
+}
+
+p #smaller {
+	font-size: 12px;
+	text-decoration: none;
+}
+
+p #purple {
+	text-color: purple;
+}
+
 #form {
 	text-align: center;
 	display: block;
@@ -5,11 +27,55 @@
 	margin-top: 14%;
 }
 
+.blue {
+	color: blue;
+	font-family: Helvetica;
+	text-align: center;
+}
+
+a {
+	text-align: center;
+	font-family: Helvetica;
+	color: #42f4d7;
+}
+
+a:active {
+	text-align: center;
+	font-family: Helvetica;
+	color: #42f4d7;
+}
+
+a:visited {
+	text-align: center;
+	font-family: Helvetica;
+	color: #42f4d7;
+}
+
+#add-things .within #2 {
+	float: right;
+}
+
+p {
+	text-align: center;
+	font-family: Helvetica;
+	color: #42f4d7;
+}
+
 #header-new {
 	font-size: 1.5em;
 	margin-top: 15%;
 	font-family: Helvetica;
 	color: blue;
+}
+
+#picname {
+	margin-top: 200px;
+	text-align: center;
+	margin: auto;
+	display: block;
+	font-family: Helvetica;
+	color: blue;
+	font-size: 1.5em;
 }
 
 p {
@@ -45,12 +111,20 @@ p {
 .button {
 	background: white;
 	border: dotted 1px black;
+	text-align: center;
+	margin: auto;
+	display: block;
+}
+
+.button .red {
+	border: dotted red 1px;
 }
 
 .button:hover {
 	background-color: gray;
 
 }
+
 
 #no_pictures {
 	display: block;
