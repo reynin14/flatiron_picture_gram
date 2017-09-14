@@ -8,6 +8,7 @@ class PicturesController < ApplicationController
 		@picture = Picture.find_by(id: params[:id])
 		@comments = Comment.all.select do |comment|
 			comment.picture_id == @picture.id
+		@picture_tag = PictureTag.new()
 		end
 	end
 

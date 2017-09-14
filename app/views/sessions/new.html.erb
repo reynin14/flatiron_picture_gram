@@ -1,8 +1,10 @@
-<h1>Welcome to Flatiron-Gram!<h1>
-  <h3><%= form_tag('/sessions/new', method: :post) do %></h3><br>
-  <h3>Username: <%= text_field_tag :username %></h3><br>
-  <h3>Password: <%= password_field_tag :password %></h3><br>
-  <h3><div><%= submit_tag 'Log In' %></div></h3>
+<div id="front_page">
+<p id="header">Welcome to Flatiron-Gram!</p>
+  <p class="text"><%= form_tag('/sessions/new', method: :post) do %></h3>
+  <p class="text">Username: <%= text_field_tag :username%></p>
+  <p class="text">Password: <%= password_field_tag :password%></p>
+  <p><div><%= submit_tag 'Log In', class: "button"%></div></p>
   <% end %>
 
-<%= button_to('Sign Up', new_user_path, method: :get) %>
+<%= button_to('Sign Up', new_user_path, method: :get, class: "button") %>
+</div>

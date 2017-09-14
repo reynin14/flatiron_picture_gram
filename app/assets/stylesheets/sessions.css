@@ -1,0 +1,32 @@
+#front_page{
+	margin: auto;
+	margin-top: 10%;
+  padding-bottom: 10px;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+#header {
+	text-align: center;
+	font-family: Helvetica;
+	color: #42f4d7;
+	font-size: 1.5em;
+  padding-bottom: 1px;
+}
+
+.text {
+	text-align: center;
+	font-family: Helvetica;
+	color: #42f4d7;
+}
+
+.button {
+	background: white;
+	border: dotted 1px black;
+}
+
+.button:hover {
+	background-color: gray;
+
+}

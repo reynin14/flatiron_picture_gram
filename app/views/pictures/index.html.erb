@@ -1,6 +1,6 @@
 <h2> Pictures! </h2>
 <ul>
 <% @pictures.each do |picture| %>
-  <li><%= link_to picture.title, picture_path(picture) %></li>
+  <li><%= link_to picture.title, picture_path(picture) :class => "photo"%></li>
 <% end %>
 </ul>

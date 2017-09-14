@@ -9,7 +9,8 @@ class TagsController < ApplicationController
 	end
 
 	def create
-		@tag = Tag.new(id_params)
+		@tag = Tag.new(tag_params)
+		@picture = Picture.find_by(id: params[:id])
 		if @tag.save 
 			redirect_to tag_path(@tag)
 		else
@@ -19,7 +20,7 @@ class TagsController < ApplicationController
 
 	private 
 
-	def id_params
+	def tag_params
 		params.require(:tag).permit(:name)
 	end
 

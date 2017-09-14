@@ -1,0 +1,6 @@
+<h2> What tag do you want to add to your picture? </h2>
+
+<%= form_for Tag.new do |f| %>
+<%= f.text_field :name %>
+<%= f.submit %>
+<% end %>

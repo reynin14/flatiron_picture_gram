@@ -1,0 +1,51 @@
+#top {
+	display: inline-block;
+	position: fixed;
+	margin-left: 10px;
+}
+
+#header {
+	text-align: center;
+	font-family: Helvetica;
+	color: blue;
+  padding-bottom: 1px;
+  margin-top: -18px;
+}
+
+img {
+	width: 500px;
+	display: block;
+	margin: auto;
+}
+
+#buttons {
+	display: block;
+	text-align: center;
+	margin: auto;
+	display: inline-block;
+	float:left;
+}
+
+.clicker {
+	background-color: white;
+	border: 1px dotted black;
+	display: inline-block;
+	float: left;
+}
+
+
+li {
+	text-align: center;
+	font-size: 1em;
+	color: black;
+	font-family: Helvetica;
+	list-style-type: none;
+}
+
+li a:visited {
+	text-align: center;
+	font-size: 1em;
+	color: black;
+	font-family: Helvetica;
+	text-decoration: none;
+}
