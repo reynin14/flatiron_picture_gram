@@ -11,15 +11,17 @@ Rails.application.routes.draw do
   post 'sessions/new', to: 'sessions#create'
   post '/pictures/comments', to: 'comments#create'
   post '/comments/comments', to: 'comments#destroy'
+  post '/sessions/destroy_all', to: 'sessions#destroy_all'
 
 
 
-  post '/users/sessions', to: 'sessions#destroy', as: '/logout'
+  post '/users/sessions', to: 'sessions#destroy', as: 'logout'
 
   get '/users/pictures/new', to: 'pictures#new'
   get '/pictures/:id/tags/new', to: 'tags#new'
 
-  root to: 'sessions#new'
+  get '/', to: 'sessions#new'
+  get '/users/:id/welcome', to: 'users#welcome'
 
   # get '/users/new', to: 'users#new', as: '/signup'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

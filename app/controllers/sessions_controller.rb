@@ -1,8 +1,11 @@
 class SessionsController < ApplicationController
+
   def new
+    @users = User.all
+    @user = User.find_by(username: params[:username])
   end
 
- def create
+  def create
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
@@ -11,10 +14,15 @@ class SessionsController < ApplicationController
       flash.now[:danger] = 'Invalid email/password combination :('
       render :new
     end
+   end
+
+  def destroy
+    session.delete :user_id
+    redirect_to '/'
   end
 
- def destroy
-    session.delete :user_id
+  def destroy_all
+    Session.all.delete
     redirect_to '/'
   end
 
