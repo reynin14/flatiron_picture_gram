@@ -6,6 +6,22 @@
 <p><img src="<%= @picture.image_url %>"></p>
 <br>
 <br>
+<p>Tags:</p><br>
+<% @picture.tags.each do |tag| %>
+<%= link_to tag.name, tag %>
+<% end %>
+<br>
+<br>
+<p>Make a tag for this picture!</p>
+<%= form_tag ('/tags/create') do %><br>
+<label>Name: </label><br>
+<%= text_field_tag :name %><br>
+<%= hidden_field_tag 'picture_id', @picture.id %>
+<%= submit_tag "Make this tag" %>
+<% end %>
+
+<br>
+<br>
 <p>Comments:</p><br>
 <ul>
   <% @comments.each do |comment| %>
@@ -22,4 +38,3 @@
 <%= button_to('Add a comment!', 'comments#create', method: :post) %>
 <%= button_to "Delete Picture", @picture, :method => :delete %>
 <% end %>
-
