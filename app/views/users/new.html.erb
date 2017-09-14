@@ -1,4 +1,6 @@
-<h2>Sign up</h2>
+<div id="signup-block">
+
+<div id="signup-head"><p>Sign up</p></div>
 <% if @user.errors.any? %>
 	<br>
 	<%= pluralize(@user.errors.count, 'error')%><br>
@@ -9,11 +11,14 @@
 </ul><br>
 <% end %>
 
-<%= form_for :user, url: '/users' do |f| %>
-  Username: <%= f.text_field :username %><br>
-  Email: <%= f.text_field :email %><br>
-  Password: <%= f.password_field :password %><br>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-	<br>
-  <%= f.submit "Create Account" %>
+<div id="signup"><%= form_for :user, url: '/users' do |f| %>
+  <p>Username: <%= f.text_field :username %></p>
+  <p>Email: <%= f.text_field :email %></p>
+  <p>Password: <%= f.password_field :password %></p>
+  <p>Password Confirmation: <%= f.password_field :password_confirmation %></p>
+  <%= f.submit "Create Account", :class => 'button' %>
 <% end %>
+	<br><%= button_to "Back", '/', method: :get, :class => 'button' %>
+</div>
+ 
+ </div>

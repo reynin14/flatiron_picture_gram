@@ -1,15 +1,20 @@
+<div id="navbar">
+	<ul id="heads">
+		<li class="header"><%= link_to("Home", user_path)%></li>
+		<li class="header"><%= link_to("New photo", 'pictures/new')%></li>
+		<li class="header"><%= link_to("Log out", 'sessions#destroy', method: :post)%></li>
+		<li class="header" id="welcome"><%=@user.username%></li>
+	</ul>
+</div>
 
-<div id="top"><h1 id="header"><%= @user.username  %>'s page</h1><br>
-<% if session[:user_id] == @user.id %>
-	<div id="buttons"><%= button_to('Add a picture', '/pictures/new', method: :get, class: "clicker") %><br><br>
-	<%= button_to('Logout', 'sessions#destroy', method: :puts, class: "clicker") %></div></div> 
-		<%end%>
-<ul>
+
+<div id="pics">
+<ul id="pic">
 <% if @user.pictures.empty? %>
   <p id="no_pictures"><%= "No pictures :(" %><p>
 <% else %>
   <% @user.pictures.each do |picture| %>
-  <li><%= link_to (image_tag (picture.image_url)), picture_path(picture) %><br>
+  <li class="picture"><%= link_to (image_tag (picture.image_url)), picture_path(picture) %><br>
   <% end %>
 <% end %>
 </ul>
