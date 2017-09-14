@@ -26,6 +26,19 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = Comment.find_by(id: params[:id])
+  end
+
+  def update
+    @comment = Comment.find_by(id: params[:id])
+    if @comment.update(comment_params)
+      redirect_to @comment
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @comment = Comment.find_by(id: params[:id])
     @picture = Picture.find_by(id: @comment.picture_id)
@@ -36,7 +49,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :picture_id, :user_id)
+    params.require(:comment).permit(:content)
   end
 
 end

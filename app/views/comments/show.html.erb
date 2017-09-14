@@ -13,6 +13,6 @@
 
 
 <div id="container">
-<%= button_to 'Edit', edit_comment_path, class: "buttons" %> <br>
+<%= button_to 'Edit', edit_comment_path, class: "buttons", method: :get%> <br>
 <%= button_to('Delete', comment_path(@comment), method: :delete, class: "buttons")%>
  </div>
