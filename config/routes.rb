@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   post '/users/sessions', to: 'sessions#destroy', as: 'logout'
   post '/pictures/sessions', to: 'sessions#new'
+  post '/comments/:id/edit', to: 'comments#update'
 
   get '/users/pictures/new', to: 'pictures#new'
   get '/comments/pictures/new', to: 'pictures#new'
