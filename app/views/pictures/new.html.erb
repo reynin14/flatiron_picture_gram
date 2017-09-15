@@ -1,13 +1,22 @@
 <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
 
 
-<div id="navbar">
-	<ul id="heads">
-		<li class="header"><%= link_to("Home", user_path(@user))%></li>
-		<li class="header"><%= link_to("New photo", 'pictures/new')%></li>
-		<li class="header"><%= link_to("Log out", 'sessions#destroy', method: :post)%></li>
-		<li class="header" id="welcome"><%=@user.username%></li>
-	</ul>
+
+
+<div id="navbar"> 
+	<ul id="heads"> 
+		<li class="header">
+		 <% if session[:user_id].nil? %> <%= link_to("Home", '/')%></li> 
+		 <%else%>
+		 <%= link_to("Home", user_path(session[:user_id]))%></li>
+		  <%end%> 
+		 <% if !session[:user_id].nil? %> 
+		 <li class="header"><%= link_to("New photo", 'pictures/new')%></li> 
+		 <li class="header"><%=link_to("Trending photos", '/pictures')%> </li>
+		 <li class="header" id="welcome"><%= link_to("Log out", 'sessions#destroy', method: :post)%></li>
+		 <li class="header" id="welcome">Welcome, <%=User.find_by(id: session[:user_id]).username%></li> 
+		 <%end%>
+	 </ul> 
 </div>
 
 <div id="form>"><p id="header-new">Add a photo</p>

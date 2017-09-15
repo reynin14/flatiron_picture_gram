@@ -1,8 +1,26 @@
-Picture Tags!
+
+<div id="navbar"> 
+	<ul id="heads"> 
+		<li class="header">
+		 <% if session[:user_id].nil? %> <%= link_to("Home", '/')%></li> 
+		 <%else%>
+		 <%= link_to("Home", user_path(session[:user_id]))%></li>
+		  <%end%> 
+		 <% if !session[:user_id].nil? %> 
+		 <li class="header"><%= link_to("New photo", 'pictures/new')%></li> 
+		 <li class="header"><%=link_to("Trending photos", '/pictures')%> </li>
+		 <li class="header" id="welcome"><%= link_to("Log out", 'sessions#destroy', method: :post)%></li>
+		 <li class="header" id="welcome">Welcome, <%=User.find_by(id: session[:user_id]).username%></li> 
+		 <%end%>
+	 </ul> 
+</div>
+
+
+<p id="header">Picture Tags!</p>
 <% @tags.each do |tag| %>
-<li>#<%= tag.name %> <%=form_tag '/pictures/:id/tags' do%>
+<p>#<%= tag.name %> <%=form_tag '/pictures/:id/tags' do%>
 <%= hidden_field_tag 'tag_id', tag.id %>
 <%= hidden_field_tag 'picture_id', @picture.id %>
-<%= submit_tag 'Delete this tag!' %></li>
+<%= submit_tag 'Delete this tag!' %></p>
 <% end %>
 <% end %>

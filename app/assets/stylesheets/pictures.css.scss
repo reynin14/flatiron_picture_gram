@@ -9,9 +9,9 @@
 	width: 100%;
 }
 
-#picname {
-	padding-top: 7%;
-	padding-bottom: -5px;
+.picname {
+	padding-top: 3%;
+	padding-bottom: -35px;
 	text-align: center;
 	margin: auto;
 	display: block;
@@ -94,10 +94,10 @@ p {
 
 #header { 
 	text-align: center;
-	color: #42f4d7;
+	color: blue;
 	padding-top: 15px;
 	font-size: 1.5em;
-  padding-bottom: 1px;
+  margin-bottom: -100px;
 }
 
 .text {
@@ -126,9 +126,12 @@ p {
 
 }
 
+#navbar #welcome {
+	float: right;
+	margin-right: 30px;
+}
+
 #no_pictures {
-	display: block;
-	margin: auto;
 	color: blue;
 	text-align: center;
 	padding-top: 20%;

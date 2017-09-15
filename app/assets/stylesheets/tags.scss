@@ -1,5 +1,138 @@
-// Place all the styles related to the tags controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ body {
+	font-family: Arial;
+}
 
-body {font-family: Arial;}
+#container {
+	margin:auto;
+	display:block;
+	text-align: center;
+	width: 100%;
+}
+
+#picname {
+	padding-top: 7%;
+	padding-bottom: -5px;
+	text-align: center;
+	margin: auto;
+	display: block;
+	color: blue;
+	font-size: 1.3em;
+}
+
+.within {
+	display: inline-block;
+	margin: auto;
+	vertical-align: text-top;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+p #smaller {
+	font-size: 12px;
+	text-decoration: none;
+}
+
+p #purple {
+	text-color: purple;
+}
+
+#form {
+	text-align: center;
+	display: block;
+	margin: auto;
+	margin-top: 14%;
+}
+
+.blue {
+	color: blue;
+	text-align: center;
+}
+
+a {
+	text-align: center;
+	color: #42f4d7;
+}
+
+a:active {
+	text-align: center;
+	color: #42f4d7;
+}
+
+a:visited {
+	text-align: center;
+	color: #42f4d7;
+}
+
+#add-things .within #2 {
+	float: right;
+}
+
+p {
+	text-align: center;
+	color: #42f4d7;
+}
+
+#header-new {
+	font-size: 1.5em;
+	margin-top: 8%;
+	color: blue;
+}
+
+p {
+	text-align: center;
+	color: #42f4d7;
+}
+
+#front_page{
+	margin: auto;
+	margin-top: 10%;
+  padding-bottom: 10px;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+#header { 
+	text-align: center;
+	color: #42f4d7;
+	padding-top: 15px;
+	font-size: 1.5em;
+  padding-bottom: 1px;
+}
+
+.text {
+	text-align: center;
+	color: blue;
+}
+
+.button {
+	background: white;
+	border: dotted 1px black;
+	text-align: center;
+	margin: auto;
+	display: block;
+}
+
+.button #delete {
+	background-color: red;
+}
+
+.button .red {
+	border: dotted red 1px;
+}
+
+.button:hover {
+	background-color: gray;
+
+}
+
+#navbar #welcome {
+	float: right;
+	margin-right: 30px;
+}
+
+#no_pictures {
+	color: blue;
+	text-align: center;
+	padding-top: 20%;
+}
