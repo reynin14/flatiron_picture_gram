@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   post '/tags/create', to: 'tags#create'
 
 
-
   post '/users/sessions', to: 'sessions#destroy', as: 'logout'
   post '/users/pictures/sessions', to: 'sessions#destroy'
   post '/pictures/sessions', to: 'sessions#new'
@@ -27,6 +26,9 @@ Rails.application.routes.draw do
 
   get '/', to: 'sessions#new'
   get '/users/:id/welcome', to: 'users#welcome'
+
+  get '/pictures/:id/show_picture_tags', to: 'pictures#show_picture_tags', as: 'show_pic_tags'
+  post '/pictures/:id/tags', to: 'tags#destroy'
 
   # get '/users/new', to: 'users#new', as: '/signup'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

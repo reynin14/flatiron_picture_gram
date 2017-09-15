@@ -1,0 +1,8 @@
+Picture Tags!
+<% @tags.each do |tag| %>
+<li>#<%= tag.name %> <%=form_tag '/pictures/:id/tags' do%>
+<%= hidden_field_tag 'tag_id', tag.id %>
+<%= hidden_field_tag 'picture_id', @picture.id %>
+<%= submit_tag 'Delete this tag!' %></li>
+<% end %>
+<% end %>

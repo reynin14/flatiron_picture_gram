@@ -20,6 +20,10 @@
 <% @picture.tags.each do |tag| %>
 <%= link_to tag.name, tag, class: "green-tag"%>
 <% end %>
+<br>
+<% if @picture.tags.empty? == false %>
+	<%= link_to 'Delete tags', show_pic_tags_path %>
+<% end %>
 <p>
 
 <p class="blue">Comments:</p>
@@ -39,6 +43,7 @@
 <%= hidden_field_tag 'picture_id', @picture.id %>
 <%= submit_tag "Tag it", class: "button" %>
 <% end %>
+<br>
 </div>
 
 <div class="within" id="2">
@@ -52,4 +57,3 @@
 </div>
 <p><%= button_to("Delete Picture", @picture, :method => :delete, class: "button", id: "delete")%></p>
 <% end %>
-
