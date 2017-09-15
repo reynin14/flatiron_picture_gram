@@ -4,7 +4,7 @@
 <h2> Pictures! </h2>
 <ul>
 <% @pictures.each do |picture| %>
-  <div><p id="picname"><%= picture.title %> </p></div>
+  <div><p id="picname"><%= picture.title %> - <%= link_to User.find_by(id: picture.user_id).username, user_path(picture.user_id) %> </p></div>
   <%= link_to (image_tag (picture.image_url)), picture %>
 <% end %>
 </ul>
