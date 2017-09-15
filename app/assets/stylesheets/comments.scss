@@ -1,12 +1,14 @@
-#topper {
-	color: blue;
-
-	padding-top: 5%;
-	font-family: Helvetica;
-	font-size: 1.3em;
+body {
+	font-family: Arial;
 }
 
-button {
+#topper {
+	color: blue;
+	font-size: 1.3em;
+	margin-top: 10%;
+}
+
+.button {
 	background-color: white;
 	border: 1px dotted black;
 }
@@ -22,7 +24,6 @@ button {
 
 p {
 	text-align: center;
-	font-family: Helvetica;
 	color: #42f4d7;
 }
 
