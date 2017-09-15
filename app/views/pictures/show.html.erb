@@ -18,9 +18,9 @@
 
 <p><span class="blue">Tags:</span>
 <% @picture.tags.each do |tag| %>
-<%= link_to tag.name, tag, class: "green-tag"%>
+#<%= link_to tag.name, tag, class: "green-tag"%>
 <% end %>
-<br>
+<br><br>
 <% if @picture.tags.empty? == false %>
 	<%= link_to 'Delete tags', show_pic_tags_path %>
 <% end %>
@@ -29,7 +29,7 @@
 <p class="blue">Comments:</p>
 <ul>
   <% @comments.each do |comment| %>
-  <p><%= comment.content %> - <span id="purple"><%= link_to User.find_by(id: comment.user_id).username, user_path(User.find_by(id: comment.user_id)) %></span> - <span id="smaller"><%= link_to 'Edit/Delete this comment', comment%></span></p>
+  <p>"<%= comment.content %>" - <span id="purple"><%= link_to User.find_by(id: comment.user_id).username, user_path(User.find_by(id: comment.user_id)) %></span> - <span id="smaller"><%= link_to 'Edit/Delete this comment', comment%></span></p>
   <%end%>
 </ul>
 
