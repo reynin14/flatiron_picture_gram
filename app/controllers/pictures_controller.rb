@@ -40,7 +40,12 @@ class PicturesController < ApplicationController
     @user = User.find_by(id: @picture.user_id)
     @picture.destroy
     redirect_to @user
-    end
+  end
+
+	def show_picture_tags
+		@picture = Picture.find(params[:id])
+		@tags = @picture.tags
+	end
 
 	private
 
