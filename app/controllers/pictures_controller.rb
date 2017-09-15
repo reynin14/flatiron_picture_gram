@@ -2,6 +2,7 @@ class PicturesController < ApplicationController
 
 	def index
 		@pictures = Picture.all
+		@user_of_pic = User.find_by(id: params[:user_id])
 	end
 
 	def show
