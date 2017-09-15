@@ -1,3 +1,7 @@
+ body {
+	font-family: Arial;
+}
+
 #container {
 	margin:auto;
 	display:block;
@@ -11,7 +15,6 @@
 	text-align: center;
 	margin: auto;
 	display: block;
-	font-family: Helvetica;
 	color: blue;
 	font-size: 1.3em;
 }
@@ -42,25 +45,21 @@ p #purple {
 
 .blue {
 	color: blue;
-	font-family: Helvetica;
 	text-align: center;
 }
 
 a {
 	text-align: center;
-	font-family: Helvetica;
 	color: #42f4d7;
 }
 
 a:active {
 	text-align: center;
-	font-family: Helvetica;
 	color: #42f4d7;
 }
 
 a:visited {
 	text-align: center;
-	font-family: Helvetica;
 	color: #42f4d7;
 }
 
@@ -70,20 +69,17 @@ a:visited {
 
 p {
 	text-align: center;
-	font-family: Helvetica;
 	color: #42f4d7;
 }
 
 #header-new {
 	font-size: 1.5em;
 	margin-top: 15%;
-	font-family: Helvetica;
 	color: blue;
 }
 
 p {
 	text-align: center;
-	font-family: Helvetica;
 	color: #42f4d7;
 }
 
@@ -98,7 +94,6 @@ p {
 
 #header { 
 	text-align: center;
-	font-family: Helvetica;
 	color: #42f4d7;
 	padding-top: 15px;
 	font-size: 1.5em;
@@ -107,7 +102,6 @@ p {
 
 .text {
 	text-align: center;
-	font-family: Helvetica;
 	color: blue;
 }
 
@@ -136,7 +130,6 @@ p {
 	display: block;
 	margin: auto;
 	color: blue;
-	font-family: Helvetica;
 	text-align: center;
 	padding-top: 20%;
 }

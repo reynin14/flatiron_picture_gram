@@ -28,6 +28,7 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find_by(id: params[:id])
+    @user = User.find_by(id: @comment[:user_id])
   end
 
   def update

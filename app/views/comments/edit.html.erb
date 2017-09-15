@@ -1,5 +1,19 @@
-<h1>Edit this comment</h1>
+<link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+
+
+<div id="navbar">
+	<ul id="heads">
+		<li class="header"><%= link_to("Home", user_path(@user))%></li>
+		<li class="header"><%= link_to("New photo", 'pictures/new')%></li>
+		<li class="header"><%= link_to("Log out", '/', method: :get)%></li>
+		<li class="header" id="welcome"><%=@user.username%></li>
+	</ul>
+</div>
+
+<div id="container">
+<p id="topper">Edit this comment</p>
 <%= form_for @comment do |f| %>
-<%= f.text_field :content %>
-<%= f.submit %>
+<%= f.text_field :content %><br><br>
+<%= f.submit class: "button" %>
 <% end %>
+</div>
